@@ -1,0 +1,444 @@
+============================================================
+2026 SUPERBLOOM PREDICTION
+Based on Historical Data (2020 - September 2025)
+============================================================
+
+Loading trained model...
+Model loaded successfully!
+Training R²: 0.949
+Training RMSE: 0.015
+
+Loading historical data...
+Climate data shape: (144, 8)
+Years available: [np.int64(2020), np.int64(2021), np.int64(2022), np.int64(2023), np.int64(2024), np.int64(2025)]
+
+Engineering features...
+Complete data after feature engineering: 124 records
+
+============================================================
+CURRENT STATE ANALYSIS
+============================================================
+
+📍 Carrizo Plain - Aug 2025
+   ──────────────────────────────────────────────────
+   Current Bloom Score: 0.539
+   Status: 🌼 GOOD BLOOM EXPECTED
+
+   Climate Conditions:
+   • Soil Moisture (GWETROOT): 0.490 [Good]
+   • Temperature (T2M): 25.1°C (77.1°F)
+   • Precipitation: 0.00 mm/day
+   • Solar Radiation: -999.00 kW-hr/m²/day
+   • Wind Speed: 1.95 m/s
+
+   Historical Comparison (Aug):
+   • Historical Average: 0.539
+   • Current vs. Average: -0.001 [Normal]
+
+   Recent 3-Month Trend: ↓ Declining
+   • Range: 0.539 to 0.547
+
+📍 Antelope Valley - Aug 2025
+   ──────────────────────────────────────────────────
+   Current Bloom Score: 0.537
+   Status: 🌼 GOOD BLOOM EXPECTED
+
+   Climate Conditions:
+   • Soil Moisture (GWETROOT): 0.370 [Good]
+   • Temperature (T2M): 27.3°C (81.2°F)
+   • Precipitation: 0.09 mm/day
+   • Solar Radiation: -999.00 kW-hr/m²/day
+   • Wind Speed: 1.96 m/s
+
+   Historical Comparison (Aug):
+   • Historical Average: 0.538
+   • Current vs. Average: -0.001 [Normal]
+
+   Recent 3-Month Trend: ↓ Declining
+   • Range: 0.537 to 0.542
+
+============================================================
+HISTORICAL SPRING PATTERN ANALYSIS (2020-2025)
+============================================================
+
+Year-by-Year Spring Bloom Performance:
+------------------------------------------------------------
+
+📍 Carrizo Plain:
+   Spring 2021:
+      Average: 0.574 | Peak: 0.585 | Range: 0.559-0.585
+      🌼 GOOD BLOOM EXPECTED 
+   Spring 2022:
+      Average: 0.567 | Peak: 0.582 | Range: 0.552-0.582
+      🌼 GOOD BLOOM EXPECTED 
+   Spring 2023:
+      Average: 0.766 | Peak: 0.797 | Range: 0.730-0.797
+      🌸 SUPERBLOOM LIKELY SUPERBLOOM
+   Spring 2024:
+      Average: 0.679 | Peak: 0.709 | Range: 0.641-0.709
+      🌼 GOOD BLOOM EXPECTED 
+   Spring 2025:
+      Average: 0.577 | Peak: 0.582 | Range: 0.570-0.582
+      🌼 GOOD BLOOM EXPECTED 
+
+   Overall Statistics (All Springs):
+      Mean Score: 0.633
+      Std Dev: 0.084
+      Best Year: 2023 (0.766)
+      Weakest Year: 2022 (0.567)
+
+📍 Antelope Valley:
+   Spring 2021:
+      Average: 0.570 | Peak: 0.579 | Range: 0.558-0.579
+      🌼 GOOD BLOOM EXPECTED 
+   Spring 2022:
+      Average: 0.569 | Peak: 0.588 | Range: 0.552-0.588
+      🌼 GOOD BLOOM EXPECTED 
+   Spring 2023:
+      Average: 0.751 | Peak: 0.789 | Range: 0.708-0.789
+      🌸 SUPERBLOOM LIKELY SUPERBLOOM
+   Spring 2024:
+      Average: 0.635 | Peak: 0.671 | Range: 0.590-0.671
+      🌼 GOOD BLOOM EXPECTED 
+   Spring 2025:
+      Average: 0.576 | Peak: 0.580 | Range: 0.568-0.580
+      🌼 GOOD BLOOM EXPECTED 
+
+   Overall Statistics (All Springs):
+      Mean Score: 0.620
+      Std Dev: 0.076
+      Best Year: 2023 (0.751)
+      Weakest Year: 2022 (0.569)
+
+------------------------------------------------------------
+Spring Season Monthly Patterns:
+------------------------------------------------------------
+
+📍 Carrizo Plain:
+   Mar: Average 0.645 🌸 PEAK
+   Apr: Average 0.643 
+   May: Average 0.611 
+
+📍 Antelope Valley:
+   Mar: Average 0.633 🌸 PEAK
+   Apr: Average 0.632 
+   May: Average 0.595 
+
+============================================================
+SPRING 2026 SUPERBLOOM FORECAST
+============================================================
+
+Based on Historical Patterns & Current Conditions
+------------------------------------------------------------
+
+============================================================
+📍 CARRIZO PLAIN
+============================================================
+
+FORECAST METRICS:
+   2026 Spring Forecast Score: 0.674
+   Prediction Category: 🌼 GOOD BLOOM EXPECTED
+   Superbloom Probability: MODERATE (50-70%)
+
+SUPPORTING DATA:
+   Historical Average (2020-2025): 0.633
+   Recent 3-Year Trend (2023-2025): 0.674
+   Historical Best Performance: 0.797
+   Current Soil Moisture Status: Data pending
+
+FORECAST CONFIDENCE: MODERATE
+   Basis: Some variability in recent years
+
+RECOMMENDATION:
+   🌼 Good bloom expected - Worth sending the bees
+
+COMPARISON TO 2023 SUPERBLOOM:
+   2023 Spring Score: 0.766
+   2026 vs 2023: 88.0% of superbloom intensity
+   Assessment: Approaching 2023 levels 🌸
+
+FORECAST COULD IMPROVE IF:
+   • October-December 2025 precipitation exceeds 2.0 mm/day average
+   • Soil moisture rises above 0.35 by January 2026
+   • Multiple well-distributed rain events occur (3+ storms)
+
+FORECAST COULD DECLINE IF:
+   • Warm, dry winter (temps >18°C, precip <1.0 mm/day)
+   • Soil moisture drops below 0.20 in December-January
+   • Single large storm followed by prolonged drought
+
+============================================================
+📍 ANTELOPE VALLEY
+============================================================
+
+FORECAST METRICS:
+   2026 Spring Forecast Score: 0.654
+   Prediction Category: 🌼 GOOD BLOOM EXPECTED
+   Superbloom Probability: MODERATE (50-70%)
+
+SUPPORTING DATA:
+   Historical Average (2020-2025): 0.620
+   Recent 3-Year Trend (2023-2025): 0.654
+   Historical Best Performance: 0.789
+   Current Soil Moisture Status: Data pending
+
+FORECAST CONFIDENCE: MODERATE
+   Basis: Some variability in recent years
+
+RECOMMENDATION:
+   🌼 Good bloom expected - Worth sending the bees
+
+COMPARISON TO 2023 SUPERBLOOM:
+   2023 Spring Score: 0.751
+   2026 vs 2023: 87.1% of superbloom intensity
+   Assessment: Approaching 2023 levels 🌸
+
+FORECAST COULD IMPROVE IF:
+   • October-December 2025 precipitation exceeds 2.0 mm/day average
+   • Soil moisture rises above 0.35 by January 2026
+   • Multiple well-distributed rain events occur (3+ storms)
+
+FORECAST COULD DECLINE IF:
+   • Warm, dry winter (temps >18°C, precip <1.0 mm/day)
+   • Soil moisture drops below 0.20 in December-January
+   • Single large storm followed by prolonged drought
+
+============================================================
+COMPARATIVE FORECAST SUMMARY
+============================================================
+
+Which location is predicted to have the better bloom?
+
+   SIMILAR: Both locations show comparable bloom potential
+      Carrizo Plain: 0.674
+      Antelope Valley: 0.654
+      Difference: 0.021 (negligible)
+
+Both preserves typically bloom around the same time (March-April)
+   Consider visiting both if scores are within 0.10 of each other!
+
+============================================================
+COMPREHENSIVE MONITORING GUIDANCE FOR 2026
+============================================================
+
+PRIORITY MONITORING INDICATORS
+============================================================
+
+Top 10 Most Predictive Factors (from model):
+    40.5% ████████████████████ Soil Moisture (GWETROOT_lag1)
+    19.2% █████████ Soil Moisture (GWETROOT_roll3)
+    10.9% █████ Temperature (T2M_roll6)
+     9.5% ████ Temperature (T2M_lag2)
+     6.3% ███ Solar Radiation (ALLSKY_SFC_SW_DWN_lag3)
+     3.9% █ Precipitation (PRECTOTCORR_roll6)
+     1.7%  Precipitation (PRECTOTCORR_lag3)
+     1.3%  Soil Moisture (GWETROOT)
+     1.0%  Wind Speed (WS2M_lag1)
+     0.8%  Precipitation (PRECTOTCORR_lag1)
+
+============================================================
+
+CRITICAL MONITORING PERIODS FOR SPRING 2026 SUPERBLOOM
+============================================================
+
+CRITICAL October - November 2025
+   Parameters to Monitor: Precipitation, Soil Moisture
+   Targets:
+      • Precipitation: > 1.5 mm/day
+      • Soil Moisture: > 0.25
+   Why: Early winter precipitation primes soil for spring bloom. Soil moisture lag features are top predictors.
+
+CRITICAL December 2025 - January 2026
+   Parameters to Monitor: Precipitation, Soil Moisture, Temperature
+   Targets:
+      • Precipitation: > 2.0 mm/day
+      • Soil Moisture: > 0.30
+      • Temperature: 8-15°C
+   Why: Peak winter moisture period. Multiple storm events needed. Soil moisture 1-month lag is #1 predictor (40.5% importance).
+
+HIGH February 2026
+   Parameters to Monitor: Soil Moisture, Temperature, Solar Radiation
+   Targets:
+      • Soil Moisture: > 0.28
+      • Temperature: 10-16°C
+      • Solar Radiation: > 4.0 kW-hr/m²/day
+   Why: Final moisture boost before spring. Temperature begins warming for germination.
+
+MODERATE March - May 2026
+   Parameters to Monitor: Temperature, Solar Radiation
+   Targets:
+      • Temperature: 12-20°C
+      • Solar Radiation: > 5.0 kW-hr/m²/day
+   Why: Bloom season. Monitor for excessive heat (>25°C) which can end bloom early.
+
+============================================================
+
+⚠️ WARNING SIGNALS - Indicators of Poor Bloom Potential
+============================================================
+
+⚠️ Soil Moisture < 0.20 in Dec-Jan
+   Impact: Severely reduces superbloom probability
+   Action: Hope for late winter storms in Feb
+
+⚠️ No significant rain events (>15mm) Oct-Dec
+   Impact: Insufficient moisture accumulation
+   Action: Monitor December-January precipitation closely
+
+⚠️ Temperature > 18°C average in Dec-Jan
+   Impact: Warm winter reduces vernalization
+   Action: Lower bloom expectations, focus on microclimates
+
+⚠️ Single large storm followed by drought
+   Impact: Seeds germinate then die from lack of moisture
+   Action: Better to have distributed rainfall
+
+⚠️ Soil moisture decline in Feb-Mar
+   Impact: Early season drying shortens bloom window
+   Action: Visit preserves early (late March vs. April)
+
+============================================================
+
+ POSITIVE INDICATORS - Superbloom Signals
+============================================================
+
+✓ Soil Moisture > 0.35 by January
+   Impact: Strong superbloom potential
+   Forecast Boost: +25% bloom score
+
+✓ 3+ significant rain events (>20mm) Oct-Jan
+   Impact: Well-distributed moisture ideal for germination
+   Forecast Boost: +20% bloom score
+
+✓ Cool winter temps (10-13°C avg)
+   Impact: Optimal for seed dormancy break
+   Forecast Boost: +15% bloom score
+
+✓ Steady soil moisture (not spiking/crashing)
+   Impact: Consistent moisture better than boom-bust
+   Forecast Boost: +10% bloom score
+
+============================================================
+
+ DATA COLLECTION RECOMMENDATIONS
+============================================================
+
+1. AUTOMATED MONITORING:
+   • Set up NASA POWER API calls to download monthly data
+   • Update prediction model monthly (Oct 2025 - Feb 2026)
+   • Create alerts when soil moisture crosses thresholds
+
+2. MANUAL CHECKS:
+   • Weekly: Review NOAA precipitation forecasts
+   • Bi-weekly: Check soil moisture trends
+   • Monthly: Re-run prediction script with updated data
+
+3. FIELD OBSERVATIONS (if possible):
+   • Early March: Check for germination
+   • Mid-March: Assess early bloom density
+   • Late March - April: Peak bloom monitoring
+
+4. COMPLEMENTARY DATA SOURCES:
+   • NOAA Climate Prediction Center seasonal forecasts
+   • USDA SNOTEL snow water equivalent (higher elevations)
+   • Local weather station precipitation data
+   • Satellite vegetation indices (NDVI) starting Feb 2026
+
+============================================================
+
+ DECISION THRESHOLDS
+============================================================
+
+Based on model predictions, use these thresholds:
+
+   Forecast Score ≥ 0.80  → 🌸🌸 EXCEPTIONAL SUPERBLOOM
+                            Send Bees there immediately
+
+   Forecast Score ≥ 0.70  → 🌸 SUPERBLOOM LIKELY
+                            Send Bees!
+
+   Forecast Score ≥ 0.50  → 🌼 GOOD BLOOM EXPECTED
+                            Worth sending the bees
+
+   Forecast Score ≥ 0.30  → 🌱 MODERATE BLOOM POSSIBLE
+                            Patchy displays
+
+   Forecast Score < 0.30  → 🍂 MINIMAL BLOOM
+                            Focus on microclimates only
+
+ Update forecast monthly as new data arrives!
+   Re-run this script in: October, November, December, January, February
+
+============================================================
+SEASONAL ANOMALY DETECTION
+============================================================
+
+Comparing 2025 to Historical Baseline (2020-2024):
+------------------------------------------------------------
+
+📍 Carrizo Plain:
+
+   Winter:
+      2025: 0.551 | Historical: 0.557 (-0.006)
+      Status: ✓ Normal (below average)
+
+   Spring:
+      2025: 0.577 | Historical: 0.647 (-0.069)
+      Status: ⚡ Minor anomaly (below average)
+
+   Summer:
+      2025: 0.542 | Historical: 0.545 (-0.003)
+      Status: ✓ Normal (below average)
+
+   ⚡ Anomaly Summary for Carrizo Plain:
+      • 1 minor anomaly/anomalies
+
+📍 Antelope Valley:
+
+   Winter:
+      2025: 0.543 | Historical: 0.551 (-0.008)
+      Status: ✓ Normal (below average)
+
+   Spring:
+      2025: 0.576 | Historical: 0.631 (-0.055)
+      Status: ⚡ Minor anomaly (below average)
+
+   Summer:
+      2025: 0.540 | Historical: 0.543 (-0.004)
+      Status: ✓ Normal (below average)
+
+   ⚡ Anomaly Summary for Antelope Valley:
+      • 1 minor anomaly/anomalies
+
+------------------------------------------------------------
+Year-over-Year Change Analysis:
+------------------------------------------------------------
+
+📍 Carrizo Plain:
+   2020 → 2021: +0.011 (+2.1%) 📈
+   2021 → 2022: -0.000 (-0.0%) 📉
+   2022 → 2023: +0.062 (+11.4%) 📈
+   2023 → 2024: -0.031 (-5.1%) 📉
+   2024 → 2025: -0.022 (-3.9%) 📉
+
+📍 Antelope Valley:
+   2020 → 2021: +0.010 (+1.8%) 📈
+   2021 → 2022: +0.002 (+0.5%) 📈
+   2022 → 2023: +0.055 (+10.0%) 📈
+   2023 → 2024: -0.036 (-6.0%) 📉
+   2024 → 2025: -0.013 (-2.3%) 📉
+
+============================================================
+SAVING RESULTS
+============================================================
+ Full predictions saved to 'complete_bloom_predictions_2020-2025.csv'
+ Spring predictions saved to 'spring_bloom_predictions_2020-2025.csv'
+
+============================================================
+PREDICTION ANALYSIS COMPLETE
+============================================================
+
+Next Steps:
+   1. Monitor October-December 2025 precipitation and soil moisture
+   2. Update climate data as winter 2025-2026 progresses
+   3. Re-run predictions in January 2026 for refined forecast
+   4. Watch for winter storm patterns - multiple events better than single storms
