@@ -212,7 +212,7 @@ Re-run predictions monthly (October-February) to refine deployment timing.
 
 ---
 
-# Acknoewledgements, Citations, & License
+# Acknowledgements, Citations, & License
 This project is licensed under the MIT License.
 
 
