@@ -238,18 +238,18 @@
     <script>
         // Image paths - UPDATE THESE with your actual image file paths
         const monthImages = {
-            0: 'images/january.png',    // January
-            1: 'images/february.png',   // February
-            2: 'images/march.png',      // March
-            3: 'images/april.png',      // April
-            4: 'images/may.png',        // May
-            5: 'images/june.png',       // June
-            6: 'images/july.png',       // July
-            7: 'images/august.png',     // August
-            8: 'images/september.png',  // September
-            9: 'images/october.png',    // October
-            10: 'images/november.png',  // November
-            11: 'images/december.png'   // December
+            0: 'img/january.png',    // January
+            1: 'img/february.png',   // February
+            2: 'img/march.png',      // March
+            3: 'img/april.png',      // April
+            4: 'img/may.png',        // May
+            5: 'img/june.png',       // June
+            6: 'img/july.png',       // July
+            7: 'img/august.png',     // August
+            8: 'img/september.png',  // September
+            9: 'img/october.png',    // October
+            10: 'img/november.png',  // November
+            11: 'img/december.png'   // December
         };
 
         const monthNames = [
