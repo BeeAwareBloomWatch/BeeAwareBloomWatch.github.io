@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeeAware - Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { 
+            --nav-height: 60px; 
+            cursor: url("flower.png") 16 16, auto;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav {
+            width: 100%; 
+            height: var(--nav-height); 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            background-color: rgba(233, 171, 23, 0.8); 
+            transition: transform 0.2s ease-in-out; 
+            z-index: 1500; 
+            border-bottom-left-radius: 30px;  
+            border-bottom-right-radius: 30px;  
+            overflow: hidden;
+        }
+        
+        .nav--hidden { 
+            transform: translateY(calc(-1 * var(--nav-height))); 
+        }
+        
+        .nav__link { 
+            color: white; 
+            text-decoration: none; 
+            margin: 0 1em; 
+            font-weight: bold; 
+        }
+        
+        #flying-bee {
+            position: fixed;
+            font-size: 2.5rem;
+            z-index: 1000;
+            pointer-events: none;
+        }
+
+        /* First section - existing bee background */
+        #home-section {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            opacity: 0;
+        }
+
+        #home-section.loaded {
+            animation: fadeIn 1.5s ease-in forwards;
+        }
+
+        #home-section .content-wrapper {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        #home-section .content-wrapper.loaded {
+            animation: fadeInUp 1.5s ease-out 0.5s forwards;
+        }
+
+        /* Second section - flower field with fade-in */
+        .flower-section {
+            position: relative;
+            min-height: 100vh;
+            width: 100%;
+            background-image: url('https://images.pexels.com/photos/15973739/pexels-photo-15973739/free-photo-of-flowers-on-grass.jpeg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+
+        .flower-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Dark overlay for text readability */
+        .flower-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 1;
+        }
+
+        .flower-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 40px;
+            max-width: 900px;
+        }
+
+        .flower-content h2 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+        }
+
+        .flower-content p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+            line-height: 1.6;
+        }
+
+        .flower-content .cta-btn {
+            display: inline-block;
+            padding: 18px 45px;
+            background-color: rgba(255, 255, 255, 0.95);
+            color: #333;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .flower-content .cta-btn:hover {
+            background-color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            animation: bounce 2s infinite;
+            cursor: pointer;
+            color: #f59e0b;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .flower-content h2 {
+                font-size: 2.5rem;
+            }
+            
+            .flower-content p {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <div id="flying-bee">🐝</div>
+    
+    <nav class="nav">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="font-bold text-xl text-white flex items-center gap-1">
+                <span class="striped">BeeAware</span>
+                <img src="beeLogo.png" alt="Bee logo" class="h-10 w-10">
+            </div>
+            <div>
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="map.html" class="nav__link">Map</a>
+                <a href="2026page.html" class="nav__link">2026 Predictions</a>
+                <a href="data.html" class="nav__link">Historical Data</a>
+                <a href="about.html" class="nav__link">About Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- First Section - Original Bee Background -->
+    <section id="home-section" class="relative">
+        <img src="https://images.unsplash.com/photo-1560493676-04071c5f467b?fm=jpg&q=60&w=3000" alt="Bee background" class="absolute inset-0 h-full w-full object-cover"/>
+        <div class="content-wrapper relative z-10 container mx-auto text-center py-24 px-8" style="min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
+            <h1 class="text-5xl font-bold text-yellow-800">Hi Farmers! Welcome to BeeAware</h1>
+            <p class="text-xl text-gray-600 mt-4 max-w-3xl mx-auto">Our food supply depends on healthy bee populations. BeeAware uses NASA satellite data to identify vegetation blooms, helping farmers and beekeepers find vital food sources for their colonies.</p>
+            <div class="mt-8">
+                <a href="map.html" class="bg-green-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-amber-700 transition">View the Bloom Map</a>
+                <a href="data.html" class="bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-amber-700 transition ml-4">View Historical Data</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">↓</div>
+    </section>
+
+    <!-- Second Section - Flower Field with Fade-in -->
+    <section class="flower-section" id="flower-section">
+        <div class="flower-content">
+            <h2>Predicting Nature's Bounty</h2>
+            <p>Our AI-powered superbloom prediction model analyzes climate data to forecast when and where wildflowers will bloom, helping you plan optimal hive placement for maximum honey production.</p>
+            <a href="2026page.html" class="cta-btn">View 2026 Forecast</a>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Trigger fade-in animations on page load
+            setTimeout(() => {
+                document.getElementById('home-section').classList.add('loaded');
+            }, 100);
+
+            setTimeout(() => {
+                const contentWrapper = document.querySelector('#home-section .content-wrapper');
+                if (contentWrapper) {
+                    contentWrapper.classList.add('loaded');
+                }
+            }, 300);
+
+            // Intersection Observer for flower section fade-in on scroll
+            const observerOptions = {
+                threshold: 0.2,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            const flowerSection = document.querySelector('.flower-section');
+            if (flowerSection) {
+                observer.observe(flowerSection);
+            }
+
+            // Smooth scroll for scroll indicator
+            const scrollIndicator = document.querySelector('.scroll-indicator');
+            if (scrollIndicator) {
+                scrollIndicator.addEventListener('click', () => {
+                    document.querySelector('#flower-section').scrollIntoView({ behavior: 'smooth' });
+                });
+            }
+
+            // Flying bee animation
+            const bee = document.getElementById('flying-bee');
+            if (bee) {
+                let t = 0;
+                const speed = 0.005;
+                bee.style.willChange = "transform";
+
+                function animateBee() {
+                    const W = window.innerWidth;
+                    const H = window.innerHeight;
+
+                    const centerX = W / 2;
+                    const centerY = H / 2;
+                    const x = centerX 
+                            + 300 * Math.cos(t) 
+                            + 150 * Math.sin(3*t) 
+                            + 100 * Math.cos(5*t);
+                    const y = centerY 
+                            + 200 * Math.sin(t) 
+                            + 120 * Math.cos(2*t) 
+                            + 80 * Math.sin(4*t);
+
+                    const dt = 0.001;
+                    const xNext = centerX 
+                                + 300 * Math.cos(t + dt) 
+                                + 150 * Math.sin(3*(t + dt)) 
+                                + 100 * Math.cos(5*(t + dt));
+                    const yNext = centerY 
+                                + 200 * Math.sin(t + dt) 
+                                + 120 * Math.cos(2*(t + dt)) 
+                                + 80 * Math.sin(4*(t + dt));
+
+                    const dx = xNext - x;
+                    const dy = yNext - y;
+
+                    let angle = Math.atan2(dy, dx) * (180 / Math.PI) + 180;
+
+                    bee.style.transform = `translate(${x}px, ${y}px) rotate(${angle}deg)`;
+
+                    t += speed;
+                    requestAnimationFrame(animateBee);
+                }
+
+                animateBee();
+            }
+        });
+    </script>
+</body>
+</html>
