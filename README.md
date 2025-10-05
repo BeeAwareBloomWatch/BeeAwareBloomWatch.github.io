@@ -215,6 +215,22 @@ Re-run predictions monthly (October-February) to refine deployment timing.
 # Acknowledgements, Citations, & License
 This project is licensed under the MIT License.
 
+## Background Research
+
+Hubbart, S. (2023, March 24). The early blooms of spring: How climate change impacts growing seasons and you. The National Environmental Education Foundation (NEEF). https://www.neefusa.org/story/climate-change/early-blooms-spring-how-climate-change-impacts-growing-seasons-and-you
+
+Juda, E. (2022a, November 30). Colony collapse, Climate Change and Public Health explained. GW.
+
+Kerlin, K. E. (2023, April 18). Climate change is ratcheting up the pressure on bees. UC Davis.
+https://www.ucdavis.edu/climate/blog/bees-face-many-challenges-and-climate-change-ratcheting-pressure
+
+US Department of Agriculture. (n.d.). Bolstering bees in a changing climate. Tellus.
+https://tellus.ars.usda.gov/stories/articles/bolstering-bees-changing-climate
+
+U.S. Department of Agriculture. (n.d.). The Importance of Pollinators. USDA. https://www.usda.gov/about-
+usda/general-information/initiatives-and-highlighted-programs/peoples-garden/importance-pollinators
+
+
 ## Data
 The data was obtained from the POWER Project's Monthly & Annual v2.5.22 on 2025/10/04
 
