@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Find Distance</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 60px;
+      }
+      button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: #45a049;
+      }
+      #output {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Distance Finder Tool</h2>
+    <button onclick="promptForLocation()">Find Distance</button>
+    <p id="output"></p>
+
+    <script>
+      async function promptForLocation() {
+        const userLocation = prompt("Please enter your current location (e.g. 'New York, NY'):");
+
+        if (!userLocation) {
+          document.getElementById("output").innerText = "No location entered.";
+          return;
+        }
+
+        // Fixed destination (change this to your own location)
+        const destination = "1600 Amphitheatre Parkway, Mountain View, CA";
+
+        // ✅ Your API Key (make sure it's restricted in Google Cloud Console)
+        const apiKey = "AIzaSyBaHFOVNTAzscX8atqhC5im0zZVM7yjjeY";
+
+        // Google Distance Matrix API URL
+        const url = `https://maps.googleapis.com/maps/api/distancematrix/json?origins=${encodeURIComponent(userLocation)}&destinations=${encodeURIComponent(destination)}&units=imperial&key=${apiKey}`;
+
+        document.getElementById("output").innerText = "Calculating distance...";
+
+        // Proxy workaround (since browser requests to Google API are blocked)
+        const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`;
+
+        try {
+          const response = await fetch(proxyUrl);
+          const data = await response.json();
+          const result = JSON.parse(data.contents);
+
+          if (result.rows[0].elements[0].status === "OK") {
+            const distance = result.rows[0].elements[0].distance.text;
+            const duration = result.rows[0].elements[0].duration.text;
+            document.getElementById("output").innerText =
+              `Distance: ${distance} — Estimated travel time: ${duration}`;
+          } else {
+            document.getElementById("output").innerText =
+              "Unable to calculate distance. Please check your input.";
+          }
+        } catch (error) {
+          document.getElementById("output").innerText =
+            "Error fetching data. Please try again.";
+          console.error(error);
+        }
+      }
+    </script>
+  </body>
+</html>

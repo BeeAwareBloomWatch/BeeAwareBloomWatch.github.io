@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeeAware - Historical Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { --nav-height: 60px; padding-top: var(--nav-height); background-color: rgb(241, 228, 189);}
+        .nav {width: 100%; height: var(--nav-height); position: fixed; top: 0; left: 0; background-color: rgba(233, 171, 23, 0.8); transition: transform 0.2s ease-in-out; z-index: 1200; border-bottom-left-radius: 30px;  border-bottom-right-radius: 30px;  overflow: hidden;}
+        .nav--hidden { transform: translateY(calc(-1 * var(--nav-height))); }
+        .nav__link { color: white; text-decoration: none; margin: 0 1em; font-weight: bold; }
+
+        .main-container { display: flex; flex-direction: row; align-items: flex-start; gap: 2rem; }
+        /* UPDATED: Increased size */
+        .calendar-container { width: 100%; max-width: 1200px; }
+        .year-header { display: flex; justify-content: space-between; align-items: center; background: #E9AB17; color: white; padding: 1.5rem; border-radius: 10px 10px 0 0; }
+        /* UPDATED: Increased size */
+        .year-header span { font-size: 3rem; font-weight: bold; }
+        .year-header .arrow { cursor: pointer; user-select: none; padding: 0 1rem; }
+        .month-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; padding: 1rem; background-color: white; border-radius: 0 0 10px 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        /* UPDATED: Increased size and improved hover/active states */
+        .month-button { 
+            padding: 2.5rem 0; /* Increased padding */
+            font-size: 1.25rem; /* Increased font size */
+            font-weight: 500;
+            text-align: center; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            transition: transform 0.2s, filter 0.2s; 
+        }
+        .month-button:hover { 
+            transform: scale(1.05); /* Grow effect on hover */
+            filter: brightness(1.1); /* Brighten effect on hover */
+        }
+        .month-button.active { 
+            outline: 4px solid #3b82f6; /* Blue outline for active */
+            outline-offset: -4px;
+            font-weight: bold;
+        }
+        
+        .legend-container { padding-top: 1.5rem; } /* Adjusted padding */
+        .legend-gradient { width: 50px; height: 500px; border-radius: 8px; background: linear-gradient(to top, #0000FF, #FFFF00, #FF0000); }
+        .legend-labels { display: flex; flex-direction: column; justify-content: space-between; height: 500px; padding-left: 0.75rem; font-size: 1.1rem;}
+        
+        #notes-display { background-color: white; border-radius: 10px; padding: 1.5rem; margin-top: 1.5rem; width: 100%; max-width: 1200px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); min-height: 100px; font-size: 1.1rem;}
+    </style>
+</head>
+<body class="">
+    <nav class="nav">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="font-bold text-xl text-white flex items-center gap-1">
+                <span class="striped">BeeAware</span>
+                <img src="beeLogo.png" alt="Bee logo" class="h-10 w-10">
+            </div>
+            <div>
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="map.html" class="nav__link">Map</a>
+                <a href="2026page.html" class="nav__link">2026 Predictions</a>
+                <a href="data.html" class="nav__link">Historical Data</a>
+                <a href="about.html" class="nav__link">About Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="data-section">
+        <div class="flex flex-col items-center justify-center min-h-[calc(100vh-60px)] p-8">
+            <h2 class="text-4xl font-bold mb-4 text-center">Historical Bloom Data</h2>
+            <p class="text-gray-600 mb-8 text-center">Select a location, month, and year to view historical data.</p>
+            
+            <div class="mb-4">
+                <label for="location-selector" class="font-bold text-lg mr-2">Location:</label>
+                <select id="location-selector" class="p-2 rounded-lg border text-lg">
+                    </select>
+            </div>
+
+            <div class="main-container">
+                <div class="calendar-container">
+                    <div class="year-header">
+                        <span id="prev-year-btn" class="arrow">&#10094;</span>
+                        <span id="year-display">2025</span>
+                        <span id="next-year-btn" class="arrow">&#10095;</span>
+                    </div>
+                    <div id="month-grid" class="month-grid"></div>
+                </div>
+
+                <div class="legend-container flex">
+                    <div class="legend-gradient"></div>
+                    <div class="legend-labels font-semibold">
+                        <span>Superbloom</span>
+                        <span class="text-center">Mid-Bloom</span>
+                        <span>No Bloom</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="notes-display">
+                <p class="text-gray-500">Click on a month to see notes...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            const locationSelector = document.getElementById('location-selector');
+            const prevYearBtn = document.getElementById('prev-year-btn');
+            const nextYearBtn = document.getElementById('next-year-btn');
+            const yearDisplay = document.getElementById('year-display');
+            const monthGrid = document.getElementById('month-grid');
+            const notesDisplay = document.getElementById('notes-display');
+
+            const MIN_YEAR = 2020;
+            const MAX_YEAR = 2025;
+            const monthNames = ["January","February","March","April","May","June","July",
+                                "August","September","October","November","December"];
+            let currentYear = MAX_YEAR;
+            let bloomData = {};
+            let notesData = {};
+            let climateData = {}; // <-- NEW
+            let scoreRange = { min: Infinity, max: -Infinity };
+
+            // --- CSV LOADING ---
+            async function fetchCSV(path) {
+                const response = await fetch(path);
+                if (!response.ok) throw new Error(`Failed to load ${path}`);
+                return await response.text();
+            }
+
+            async function loadBloomData() {
+                const csvText = await fetchCSV('DataSets - IMAGE_SCORING.csv');
+                const lines = csvText.trim().split('\n');
+                for (let i = 1; i < lines.length; i++) {
+                    const [location, yearStr, monthStr, scoreStr, note] = lines[i].split(',');
+                    const year = parseInt(yearStr), month = parseInt(monthStr), score = parseFloat(scoreStr);
+                    if (!location || isNaN(year) || isNaN(month) || isNaN(score)) continue;
+
+                    bloomData[location] ??= {};
+                    bloomData[location][year] ??= {};
+                    notesData[location] ??= {};
+                    notesData[location][year] ??= {};
+
+                    bloomData[location][year][month] = score;
+                    notesData[location][year][month] = note?.replace(/^"|"$/g, '') || "No notes available.";
+                    scoreRange.min = Math.min(scoreRange.min, score);
+                    scoreRange.max = Math.max(scoreRange.max, score);
+                }
+                // Populate dropdown
+                Object.keys(bloomData).forEach(loc => {
+                    const opt = document.createElement('option');
+                    opt.value = loc; opt.textContent = loc;
+                    locationSelector.appendChild(opt);
+                });
+            }
+
+            async function loadClimateData() {
+                // Two files: Carrizo Plain (CP) and Antelope Valley (AP)
+                const files = { "Carrizo Plain": "DataSets - NASAPOWER_CP.csv", 
+                                "Antelope Valley": "DataSets - NASAPOWER_AV.csv" };
+
+                for (const [loc, file] of Object.entries(files)) {
+                    const text = await fetchCSV(file);
+                    const lines = text.trim().split('\n').slice(14); // skip NASA header
+                    const header = lines[0].split(',');
+                    const months = header.slice(3,15); // JAN–DEC
+
+                    climateData[loc] ??= {};
+
+                    for (let i = 1; i < lines.length; i++) {
+                        const row = lines[i].split(',');
+                        const param = row[1];
+                        const year = parseInt(row[2]);
+                        if (isNaN(year)) continue;
+
+                        climateData[loc][year] ??= {};
+                        months.forEach((m, idx) => {
+                            const val = parseFloat(row[3+idx]);
+                            const month = idx+1;
+                            climateData[loc][year][month] ??= {};
+                            climateData[loc][year][month][param] = val;
+                        });
+                    }
+                }
+            }
+
+            // --- COLOR SCALE ---
+            function getColorForScore(score) {
+                if (!score || isNaN(score)) return '#f3f4f6';
+                const norm = (score - scoreRange.min) / (scoreRange.max - scoreRange.min);
+                let r,g,b;
+                if (norm <= 0.5) {
+                    const t = norm/0.5; r = t*255; g = t*255; b = 255 - t*255;
+                } else {
+                    const t = (norm-0.5)/0.5; r=255; g = 255 - t*255; b=0;
+                }
+                return `rgb(${Math.round(r)},${Math.round(g)},${Math.round(b)})`;
+            }
+
+            function updateArrowVisibility() {
+                prevYearBtn.style.visibility = (currentYear<=MIN_YEAR) ? 'hidden':'visible';
+                nextYearBtn.style.visibility = (currentYear>=MAX_YEAR) ? 'hidden':'visible';
+            }
+
+            function updateYear() {
+                yearDisplay.textContent = currentYear;
+                updateArrowVisibility();
+                renderMonths();
+            }
+
+            function renderMonths() {
+                monthGrid.innerHTML='';
+                notesDisplay.innerHTML='<p class="text-gray-500">Click on a month to see notes...</p>';
+                const loc = locationSelector.value;
+
+                monthNames.forEach((mName, idx) => {
+                    const month = idx+1;
+                    const score = bloomData[loc]?.[currentYear]?.[month];
+                    const note = notesData[loc]?.[currentYear]?.[month];
+                    const color = getColorForScore(score);
+
+                    const div = document.createElement('div');
+                    div.textContent = mName;
+                    div.classList.add('month-button');
+                    div.style.backgroundColor=color;
+                    div.style.color = (score && score > (scoreRange.min+scoreRange.max)/2) ? 'white':'black';
+
+                    div.addEventListener('click', () => {
+                        document.querySelectorAll('.month-button.active').forEach(b=>b.classList.remove('active'));
+                        div.classList.add('active');
+
+                        const climate = climateData[loc]?.[currentYear]?.[month] || {};
+                        const soil = climate['GWETROOT'] ?? 'NA';
+                        const temp = climate['T2M'] ?? 'NA';
+                        const rad  = climate['ALLSKY_SFC_SW_DWN'] ?? 'NA';
+                        const wind = climate['WS2M'] ?? 'NA';
+
+                        notesDisplay.innerHTML = `
+                            <p><strong>${mName} ${currentYear} - ${loc}</strong></p>
+                            <p>Quality of Bloom: ${note || "No notes available."}</p>
+                            <p>Average Image Score: ${(score ?? "NA")} (0–1 scale)</p>
+                            <p>Soil Moisture: ${soil} (fraction)</p>
+                            <p>Temperature: ${temp} °C</p>
+                            <p>Solar Radiation: ${rad} MJ/m²/day</p>
+                            <p>Wind Speed: ${wind} m/s</p>
+                        `;
+                    });
+                    monthGrid.appendChild(div);
+                });
+            } 
+
+            // --- EVENTS ---
+            prevYearBtn.addEventListener('click', ()=>{ if(currentYear>MIN_YEAR){currentYear--;updateYear();}});
+            nextYearBtn.addEventListener('click', ()=>{ if(currentYear<MAX_YEAR){currentYear++;updateYear();}});
+            locationSelector.addEventListener('change', renderMonths);
+
+            // --- INIT ---
+            await loadBloomData();
+            await loadClimateData();
+            updateYear();
+            const today = new Date();
+            const defaultMonth = today.getMonth() + 1; // 1–12
+            const defaultYear = today.getFullYear();
+            const loc = locationSelector.value || Object.keys(bloomData)[0]; // pick first location if none
+
+            if (bloomData[loc]?.[defaultYear]?.[defaultMonth]) {
+                // simulate a click after rendering
+                setTimeout(() => {
+                    const monthButtons = document.querySelectorAll('.month-button');
+                    if (monthButtons[defaultMonth - 1]) {
+                        monthButtons[defaultMonth - 1].click();
+                    }
+                }, 100);
+            }
+        });
+        </script>
+
+</body>
+</html>

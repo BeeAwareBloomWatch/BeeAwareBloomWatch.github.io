@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Future Predictions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body { --nav-height: 60px; background-color: rgb(241, 228, 189);}
+        .nav {width: 100%; height: var(--nav-height); position: fixed; top: 0; left: 0; background-color: rgba(233, 171, 23, 0.8); transition: transform 0.2s ease-in-out; z-index: 1200; border-bottom-left-radius: 30px;  border-bottom-right-radius: 30px;  overflow: hidden;}
+        .nav--hidden { transform: translateY(calc(-1 * var(--nav-height))); }
+        .nav__link { color: white; text-decoration: none; margin: 0 1em; font-weight: bold; }
+    </style>
+  </head>
+  <body class="bg-gradient-to-b from-yellow-50 to-amber-100 min-h-screen flex flex-col items-center py-12">
+      <nav class="nav">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="font-bold text-xl text-white flex items-center gap-1">
+                <span class="striped">BeeAware</span>
+                <img src="beeLogo.png" alt="Bee logo" class="h-10 w-10">
+            </div>
+            <div>
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="map.html" class="nav__link">Map</a>
+                <a href="2026page.html" class="nav__link">2026 Predictions</a>
+                <a href="data.html" class="nav__link">Historical Data</a>
+                <a href="about.html" class="nav__link">About Us</a>
+            </div>
+        </div>
+    </nav>
+    <!-- Banner -->
+    <header class="mt-12 bg-gradient-to-r from-amber-500 to-yellow-400 text-white py-8 px-6 rounded-2xl shadow-xl w-11/12 max-w-4xl text-center">
+      <h1 class="text-4xl font-extrabold tracking-wide drop-shadow-lg">
+        🌼 Upcoming Superbloom Predictions 🌼
+      </h1>
+      <p class="mt-2 text-lg opacity-90">
+        Data-driven likelihoods for upcoming superblooms in major regions
+      </p>
+    </header>
+
+    <!-- Predictions Section -->
+    <section class="mt-10 w-11/12 max-w-3xl space-y-6">
+      <!-- Example 1 -->
+      <div class="bg-white shadow-lg rounded-xl p-6 flex items-center justify-between hover:shadow-xl transition">
+        <div class="flex flex-col">
+          <h2 class="text-2xl font-semibold text-gray-800">Carrizo Plain</h2>
+          <p class="text-gray-500 text-sm">California, USA</p>
+        </div>
+        <div class="text-right">
+          <p class="text-3xl font-bold text-amber-600">67%</p>
+          <p class="text-sm text-gray-500">intensity of superbloom</p>
+        </div>
+      </div>
+
+      <!-- Example 2 -->
+      <div class="bg-white shadow-lg rounded-xl p-6 flex items-center justify-between hover:shadow-xl transition">
+        <div class="flex flex-col">
+          <h2 class="text-2xl font-semibold text-gray-800">Antelope Valley</h2>
+          <p class="text-gray-500 text-sm">California, USA</p>
+        </div>
+        <div class="text-right">
+          <p class="text-3xl font-bold text-amber-600">65%</p>
+          <p class="text-sm text-gray-500">intensity of superbloom</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer note -->
+    <footer class="mt-12 text-gray-600 text-sm">
+      <p>Predictions powered by environmental and climate data modeling (v1.0)</p>
+    </footer>
+    <script>
+        // Navbar hiding logic
+        const nav = document.querySelector(".nav");
+        let lastScrollY = window.scrollY;
+        window.addEventListener("scroll", () => {
+            if (lastScrollY < window.scrollY) { nav.classList.add("nav--hidden"); } else { nav.classList.remove("nav--hidden"); }
+            if (window.scrollY < 10) { nav.classList.remove("nav--hidden"); }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeeAware - About Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body { --nav-height: 60px; padding-top: var(--nav-height); background-color: rgb(241, 228, 189);}
+        .nav {width: 100%; height: var(--nav-height); position: fixed; top: 0; left: 0; background-color: rgba(233, 171, 23, 0.8); transition: transform 0.2s ease-in-out; z-index: 1200; border-bottom-left-radius: 30px;  border-bottom-right-radius: 30px;  overflow: hidden;}
+        .nav--hidden { transform: translateY(calc(-1 * var(--nav-height))); }
+        .nav__link { color: white; text-decoration: none; margin: 0 1em; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="font-bold text-xl text-white flex items-center gap-1">
+                <span class="striped">BeeAware</span>
+                <img src="beeLogo.png" alt="Bee logo" class="h-10 w-10">
+            </div>
+            <div>
+                <a href="index.html" class="nav__link">Home</a>
+                <a href="map.html" class="nav__link">Map</a>
+                <a href="2026page.html" class="nav__link">2026 Predictions</a>
+                <a href="data.html" class="nav__link">Historical Data</a>
+                <a href="about.html" class="nav__link">About Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <div id="about-us">
+        <div class="p-8">
+            <h2 class="text-4xl font-bold mb-8 text-center">About BeeAware</h2>
+            <div class="max-w-4xl mx-auto text-lg text-gray-700 space-y-6 bg-white p-8 rounded-lg shadow-md">
+                <p><strong>Our Mission:</strong> To provide farmers, beekeepers, and conservationists with accessible, data-driven tools to support pollinator populations. By visualizing near real-time vegetation blooms, we can help ensure the health of bee colonies, which are vital to our food supply.</p>
+                <p><strong>The Team:</strong> Built with love from Clemson during the 2025 NASA Space Apps Challenge.</p>
+                <p><strong>Data Sources:</strong> This project leverages publicly available data from NASA's Earth observation satellites, processed to identify vegetation health and potential floral blooms.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Navbar hiding logic
+        const nav = document.querySelector(".nav");
+        let lastScrollY = window.scrollY;
+        window.addEventListener("scroll", () => {
+            if (lastScrollY < window.scrollY) { nav.classList.add("nav--hidden"); } else { nav.classList.remove("nav--hidden"); }
+            if (window.scrollY < 10) { nav.classList.remove("nav--hidden"); }
+            lastScrollY = window.scrollY;
+        });
+    </script>
+</body>
+</html>
