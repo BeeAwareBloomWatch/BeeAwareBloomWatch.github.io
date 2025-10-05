@@ -215,6 +215,13 @@ Re-run predictions monthly (October-February) to refine deployment timing.
 # Acknowledgements, Citations, & License
 This project is licensed under the MIT License.
 
+## Data
+The data was obtained from the POWER Project's Monthly & Annual v2.5.22 on 2025/10/04
+
+## Images
+NASA Worldview Snapshots
+Ten, O. (2023). [Photograph of flowers in grass]. pexels. https://www.pexels.com/photo/flowers-on-grass-15973739/
+
 
 # Team - Bees Needs
 - Nadia Chestnut
