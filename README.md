@@ -222,6 +222,8 @@ The data was obtained from the POWER Project's Monthly & Annual v2.5.22 on 2025/
 NASA Worldview Snapshots
 Ten, O. (2023). [Photograph of flowers in grass]. pexels. https://www.pexels.com/photo/flowers-on-grass-15973739/
 
+## Thank You!
+NASA Space Apps Challenge for encouraging the creation of this project!
 
 # Team - Bees Needs
 - Nadia Chestnut
