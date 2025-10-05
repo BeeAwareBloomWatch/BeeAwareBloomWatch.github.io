@@ -2,7 +2,6 @@
 
 # Ptich
 
-# Website
 # BeeAware Website
 
 A web application that helps farmers and beekeepers identify optimal flower bloom locations for bee colonies using NASA satellite data and machine learning predictions.
@@ -47,7 +46,7 @@ Project information:
 ---
 
 # ML Model
-# California Superbloom Prediction Model
+## California Superbloom Prediction Model
 
 A machine learning system that predicts California wildflower superbloom probability using NASA POWER climate data and NASA Worldview Superbloom Visualizations. Trained on 5 years of historical data (2020-2025) to forecast bloom conditions for Carrizo Plain National Monument and Antelope Valley California Poppy Preserve.
 
