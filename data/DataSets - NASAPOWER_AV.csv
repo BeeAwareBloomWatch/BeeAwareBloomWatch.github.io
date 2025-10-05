@@ -1,0 +1,39 @@
+-BEGIN HEADER-,,,,,,,,,,,,,,,
+NASA/POWER Source Native Resolution Monthly and Annual,,,,,,,,,,,,,,,
+Dates (month/day/year): 01/01/2020 through 12/31/2025 in LST,,,,,,,,,,,,,,,
+Location: Latitude 34.7386 Longitude -118.3765,,,,,,,,,,,,,,,
+Elevation from MERRA-2: Average for 0.5 x 0.625 degree lat/lon region = 785.57 meters,,,,,,,,,,,,,,,
+The value for missing source data that cannot be computed or is outside of the sources availability range: -999,,,,,,,,,,,,,,,
+Parameter(s):,,,,,,,,,,,,,,,
+ALLSKY_SFC_SW_DWN CERES SYN1deg All Sky Surface Shortwave Downward Irradiance (MJ/m^2/day),,,,,,,,,,,,,,,
+GWETROOT MERRA-2 Root Zone Soil Wetness (1),,,,,,,,,,,,,,,
+IMERG_PRECTOT MERRA-2 Total Precipitation (mm/day),,,,,,,,,,,,,,,
+T2M MERRA-2 Temperature at 2 Meters (C),,,,,,,,,,,,,,,
+WS2M MERRA-2 Wind Speed at 2 Meters (m/s),,,,,,,,,,,,,,,
+-END HEADER-,,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,,
+LOCATION,PARAMETER,YEAR,JAN,FEB,MAR,APR,MAY,JUN,JUL,AUG,SEP,OCT,NOV,DEC,ANN
+Antelope Valley,ALLSKY_SFC_SW_DWN,2020,12.04,16.57,16.02,21.72,28.83,28.72,30.59,25.98,21.84,17.34,13.5,10.81,20.34
+Antelope Valley,ALLSKY_SFC_SW_DWN,2021,11.52,16.7,20.31,25.22,28.45,29.67,27.7,25.75,22.23,16.92,13.58,9.37,20.63
+Antelope Valley,ALLSKY_SFC_SW_DWN,2022,11.92,16.83,20.53,25.41,28.65,30.13,28.83,25.88,21.2,17.02,13.08,9.05,20.72
+Antelope Valley,ALLSKY_SFC_SW_DWN,2023,10.03,13.93,16.53,24.78,24.04,25.67,29.11,25.5,20.32,17.81,13.08,9.55,19.22
+Antelope Valley,ALLSKY_SFC_SW_DWN,2024,10.99,12.59,18.22,23.51,26.4,29.13,28.68,26.92,22.08,17.27,12.57,10.44,19.92
+Antelope Valley,ALLSKY_SFC_SW_DWN,2025,12.54,14.81,17.83,22.72,26.02,-999,-999,-999,-999,-999,-999,-999,-999
+Antelope Valley,GWETROOT,2020,0.57,0.52,0.55,0.62,0.5,0.41,0.37,0.37,0.37,0.37,0.38,0.38,0.45
+Antelope Valley,GWETROOT,2021,0.41,0.44,0.43,0.4,0.37,0.37,0.37,0.37,0.37,0.38,0.38,0.45,0.39
+Antelope Valley,GWETROOT,2022,0.6,0.54,0.48,0.45,0.4,0.37,0.37,0.37,0.38,0.37,0.42,0.46,0.43
+Antelope Valley,GWETROOT,2023,0.69,0.71,0.82,0.76,0.61,0.5,0.41,0.41,0.42,0.38,0.38,0.41,0.54
+Antelope Valley,GWETROOT,2024,0.47,0.69,0.71,0.67,0.54,0.44,0.38,0.37,0.37,0.37,0.37,0.37,0.48
+Antelope Valley,GWETROOT,2025,0.38,0.46,0.5,0.46,0.41,0.38,0.37,0.37,-999,-999,-999,-999,-999
+Antelope Valley,T2M,2020,8.5,10.8,9.95,14.23,18.97,21.78,25.57,27.82,25.95,20.86,12.85,9.27,17.23
+Antelope Valley,T2M,2021,8.78,9.63,10.02,16,19.17,25.58,28.23,26.74,24.2,16.4,15.23,8.29,17.39
+Antelope Valley,T2M,2022,8.62,9.43,13.12,15.5,18.82,25.33,27.03,28.52,25.65,19.93,9.62,8.15,17.53
+Antelope Valley,T2M,2023,6.6,6.84,8.06,14.3,16.13,18.42,28.12,25.96,21.09,19.2,13.28,10.65,15.78
+Antelope Valley,T2M,2024,8.59,8.84,10.27,13.28,16.9,23.73,29.71,27.33,25.24,21.77,11.7,11.59,17.45
+Antelope Valley,T2M,2025,8.58,11.66,10.99,14.44,19.18,23.61,24.53,27.33,-999,-999,-999,-999,-999
+Antelope Valley,WS2M,2020,2.14,2.2,2.29,2.37,2.28,2.39,2.29,2.1,1.74,1.85,2.07,2.52,2.19
+Antelope Valley,WS2M,2021,2.63,2.52,2.26,2.33,2.27,2.33,2.25,2.2,2.01,2.09,2.01,2.1,2.25
+Antelope Valley,WS2M,2022,2.3,2.51,2.3,2.49,2.35,2.27,2.3,2.01,1.87,1.54,2.54,1.9,2.19
+Antelope Valley,WS2M,2023,2.56,2.57,2.64,1.98,2.36,2.31,2.12,2.08,1.99,1.97,2.15,1.92,2.22
+Antelope Valley,WS2M,2024,2.09,2.06,2.32,2.23,2.28,2.28,2.07,2.03,1.84,1.53,2.18,1.93,2.07
+Antelope Valley,WS2M,2025,2.63,2.37,2.49,2.19,2.09,2.26,2.35,1.96,-999,-999,-999,-999,-999
