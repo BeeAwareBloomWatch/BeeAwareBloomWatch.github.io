@@ -154,8 +154,8 @@
 
             async function loadClimateData() {
                 // Two files: Carrizo Plain (CP) and Antelope Valley (AP)
-                const files = { "Carrizo Plain": "DataSets - NASAPOWER_CP.csv", 
-                                "Antelope Valley": "DataSets - NASAPOWER_AV.csv" };
+                const files = { "Carrizo Plain": "data/DataSets - NASAPOWER_CP.csv", 
+                                "Antelope Valley": "data/DataSets - NASAPOWER_AV.csv" };
 
                 for (const [loc, file] of Object.entries(files)) {
                     const text = await fetchCSV(file);
