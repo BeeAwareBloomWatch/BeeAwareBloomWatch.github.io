@@ -178,11 +178,11 @@ This project is licensed under the MIT License.
 
 
 # Team - Bees Needs
-Nadia Chestnut
-Adam Gibson
-Robert Johnson
-Alejandra Rodriguez
-Bryson Still
-Kai Tucker
+- Nadia Chestnut
+- Adam Gibson
+- Robert Johnson
+- Alejandra Rodriguez
+- Bryson Still
+- Kai Tucker
 
 
