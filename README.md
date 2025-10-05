@@ -3,6 +3,19 @@
 # BeeAware
 
 # Pitch
+Ten years ago, about 2.6 million honeybee colonies supplied farms all over the US. In the past year alone more than half of all of these colonies died. This event threatens not only our crops, but the food security of every person living in the states, and the health of our economy. According to the USDA Bee-Research lab, in Spring 2025, 62.3% of all American honeybees died from a viral pathogen. 
+
+NASA LANDSAT data shows an immediate effect: shrinking blooms, declining vegetation and disrupting growing cycles. Our food system is at risk. 
+
+That’s why we created BeeAware, a NASA-powered web tool that uses satellite data to protect pollinators and restore balance to the ecosystems they support, tracking bloom data over time to visualize blooming hotspots. 
+
+Upon analyzing NASA’s vegetation and bloom data over the last decade, we found that flowering seasons are shifting due to climate instability. This isn’t just a bee problem, it’s an ecological chain reaction. Without bees, 1 in 3 crops lose their pollinators. Wild plants fail to reproduce. Biodiversity declines.  
+
+BeeAware doesn’t just visualize data, it forms real decisions.  
+
+Farmers can decide when and where to plant or reduce pesticide use to maximize natural pollination and yield. Beekeepers can choose optimal hive locations near upcoming blooms to strengthen colonies. And can transport their weakened colonies to rebuild their populations. Conservationists and policymakers can target critical restoration zones. Communities can know when to limit human activity, such as mowing or spraying.  
+
+If satellites once showed us decline, they can now show us renewal.
 
 # BeeAware Website
 
