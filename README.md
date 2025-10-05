@@ -174,5 +174,15 @@ Re-run predictions monthly (October-February) to refine deployment timing.
 # Website
 
 # Acknoewledgements, Citations, & License
+This project is licensed under the MIT License.
+
+
+# Team - Bees Needs
+Nadia Chestnut
+Adam Gibson
+Robert Johnson
+Alejandra Rodriguez
+Bryson Still
+Kai Tucker
 
 
