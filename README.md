@@ -2,6 +2,49 @@
 
 # Ptich
 
+# Website
+# BeeAware Website
+
+A web application that helps farmers and beekeepers identify optimal flower bloom locations for bee colonies using NASA satellite data and machine learning predictions.
+
+## Overview
+
+BeeAware is a platform designed to support agricultural communities by leveraging climate data and machine learning to predict wildflower superbloom events in California. The website provides:
+
+- Interactive maps
+- Historical bloom data visualization
+- 2026 superbloom predictions
+- Monthly satellite imagery timeline
+- Educational resources about bee conservation
+
+  ## Pages
+
+### 1. Home (`index.html`)
+Landing page
+
+### 2. Map (`map.html`)
+Interactive bloom location map featuring:
+- Find distance between you and Antellope Valley and/or Carrizo Plain
+- Scroll animation of bloom satellite images
+
+### 3. 2026 Predictions (`2026page.html`)
+Forecast dashboard displaying:
+- Spring 2026 superbloom probability
+- Carrizo Plain forecast (0.674 score)
+- Antelope Valley forecast (0.654 score)
+
+### 4. Historical Data (`data.html`)
+Comprehensive historical analysis:
+- Year-by-year bloom performance (2020-2025)
+- Quality of Bloom and contributing statistics
+- Gradient Calendar
+
+### 5. About Us (`about.html`)
+Project information:
+- Team background
+- Mission
+
+---
 
 # ML Model
 # California Superbloom Prediction Model
@@ -169,9 +212,6 @@ Re-run predictions monthly (October-February) to refine deployment timing.
 - [ ] Additional California wildflower regions
 
 ---
-
-
-# Website
 
 # Acknoewledgements, Citations, & License
 This project is licensed under the MIT License.
