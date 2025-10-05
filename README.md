@@ -233,10 +233,8 @@ usda/general-information/initiatives-and-highlighted-programs/peoples-garden/imp
 
 ## Data
 The data was obtained from the POWER Project's Monthly & Annual v2.5.22 on 2025/10/04
-
-## Images
 NASA Worldview Snapshots
-Ten, O. (2023). [Photograph of flowers in grass]. pexels. https://www.pexels.com/photo/flowers-on-grass-15973739/
+
 
 ## Thank You!
 NASA Space Apps Challenge for encouraging the creation of this project!
