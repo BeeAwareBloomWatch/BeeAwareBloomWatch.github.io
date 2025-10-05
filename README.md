@@ -1,1 +1,13 @@
-# BeeAwareBloomWatch.github.io
+# BeeAware
+
+# Ptich 
+
+# Research
+
+# ML Model
+
+# Website
+
+# Acknoewledgements & Citations
+
+
