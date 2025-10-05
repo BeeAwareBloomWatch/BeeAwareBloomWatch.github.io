@@ -1,6 +1,6 @@
 # BeeAware
 
-# Ptich
+# Pitch
 
 # BeeAware Website
 
